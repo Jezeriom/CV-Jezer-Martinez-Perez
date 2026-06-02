@@ -224,8 +224,8 @@ function Experiences({ experienceState }) {
         {experiences.map((experience) => (
           <article className="experience-card" key={experience._id}>
             <span>{formatDate(experience.startDate)} - {formatDate(experience.endDate)}</span>
-            <h2>{experience.role}</h2>
-            <strong>{experience.company}</strong>
+            <h2>{experience.role || 'Cargo sin especificar'}</h2>
+            <strong>{experience.company || 'Empresa sin especificar'}</strong>
             <p>{experience.description}</p>
           </article>
         ))}
@@ -364,8 +364,8 @@ function Admin({ experienceState }) {
             <article className="admin-row" key={experience._id}>
               <div>
                 <span>{formatDate(experience.startDate)} - {formatDate(experience.endDate)}</span>
-                <h2>{experience.role}</h2>
-                <strong>{experience.company}</strong>
+                <h2>{experience.role || 'Cargo sin especificar'}</h2>
+                <strong>{experience.company || 'Empresa sin especificar'}</strong>
                 <p>{experience.description}</p>
               </div>
               <div className="row-actions">
