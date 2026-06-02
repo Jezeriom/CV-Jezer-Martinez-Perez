@@ -12,6 +12,15 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "API CV Jezer funcionando",
+    endpoints: {
+      experiences: "/api/experiences"
+    }
+  });
+});
+
 // routes
 app.use("/api/experiences", require("./routes/experiences"));
 
